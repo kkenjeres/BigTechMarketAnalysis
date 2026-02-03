@@ -34,5 +34,5 @@ ax.add_patch(rect)
 ax.text(0.05, 0.95, text, fontsize=10, fontfamily='monospace', verticalalignment='top', linespacing=1.5)
 fig.text(0.5, 0.01, 'Рисунок 5 – Распечатки обучающей и тренировочной выборок', ha='center', fontsize=12, fontweight='bold')
 
-plt.savefig('images/Figure_5_Train_Test_Split.png', bbox_inches='tight', dpi=150)
+plt.savefig('images/Figure_5_TrainTestSplit.png', bbox_inches='tight', dpi=150)
 plt.close()

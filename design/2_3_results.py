@@ -1,4 +1,5 @@
 import sys
+import time
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
@@ -10,15 +11,19 @@ from design.models import all_models
 X_train, X_test, y_train, y_test, _ = get_splits()
 
 results = {}
+train_times = {}
 trained_models = {}
 
 for name, model in all_models.items():
+    t0 = time.perf_counter()
     model.fit(X_train, y_train)
+    elapsed = time.perf_counter() - t0
+    train_times[name] = elapsed
     preds = model.predict(X_test)
     acc = accuracy_score(y_test, preds)
     results[name] = acc
     trained_models[name] = model
-    print(f"{name}: {acc:.2%}")
+    print(f"{name}: accuracy {acc:.2%}, время обучения {elapsed:.2f} с")
 
 plt.figure(figsize=(12, 7))
 slice_len = 60

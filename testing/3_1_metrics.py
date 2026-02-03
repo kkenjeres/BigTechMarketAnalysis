@@ -43,5 +43,5 @@ plt.text(0.02, 0.98, text_output, fontsize=11, fontfamily='monospace', verticala
 rect = plt.Rectangle((0.01, 0.01), 0.98, 0.98, fill=False, linewidth=2, edgecolor='black')
 ax.add_patch(rect)
 plt.title('Рисунок 8 – Результаты тестирования (метрики эффективности)', fontsize=12, fontweight='bold', y=1.02)
-plt.savefig('images/Figure_8_Testing_Results.png', bbox_inches='tight', dpi=150)
+plt.savefig('images/Figure_8_TestingResults.png', bbox_inches='tight', dpi=150)
 plt.close()
