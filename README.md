@@ -72,4 +72,3 @@ All plots are exported to the `images/` directory:
 
 ---
 
-© 2024–2025 BigTech Analysis Project
