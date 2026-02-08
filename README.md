@@ -1,38 +1,38 @@
 # BigTech Market Analysis
 
-Проект по анализу и прогнозированию динамики цен акций крупнейших технологических компаний (Amazon, Google, Meta, Microsoft) с использованием ансамблевых методов машинного обучения.
+An ensemble machine learning pipeline for analyzing and predicting stock price movements (Growth or Fall) for major technology companies: Amazon, Google, Meta, and Microsoft.
 
 ---
 
-## 📋 Описание проекта
+## 📋 Project Overview
 
-Данная работа посвящена решению задачи классификации: предсказанию направления движения цены ("Рост" или "Падение") на следующий торговый день на основе исторических данных OHLCV (Open, High, Low, Close, Volume).
+This research project focuses on a binary classification task: predicting the direction of stock price movement for the next trading day based on historical OHLCV data (Open, High, Low, Close, Volume).
 
-### Основные возможности:
+### Key Features:
 
-- **Полный цикл обработки**: от загрузки сырых CSV-данных до формирования очищенного датасета.
-- **Ансамблевые модели**: использование 9 различных конфигураций моделей (Random Forest, Gradient Boosting, AdaBoost, Extra Trees, Bagging, Voting и др.).
-- **Глубокий анализ**: матрица корреляций, кросс-валидация (TimeSeriesSplit), замер времени обучения и оптимизация гиперпараметров.
-- **Визуализация**: автоматическая генерация 11 графиков, отражающих все этапы исследования.
+- **Comprehensive Pipeline**: Complete data lifecycle from raw CSV ingestion to cleaned dataset generation.
+- **Ensemble Learning**: Implementation of 9 model configurations, including Random Forest, Gradient Boosting, AdaBoost, Extra Trees, Bagging, and Voting Classifiers.
+- **In-depth Analysis**: Correlation matrices, TimeSeriesSplit cross-validation, training time measurement, and hyperparameter optimization.
+- **Automated Visualization**: Generates 11 unique plots covering EDA, model training, and performance evaluation.
 
 ---
 
-## 🛠 Технологический стек
+## 🛠 Tech Stack
 
 - **Python 3.13+**
-- **Pandas** — обработка и анализ данных.
-- **Scikit-learn** — построение моделей и валидация.
-- **Matplotlib / Seaborn** — визуализация результатов.
+- **Pandas** — Data manipulation and analysis.
+- **Scikit-learn** — Machine learning models and validation.
+- **Matplotlib / Seaborn** — Result visualization.
 
 ---
 
-## 🚀 Как запустить
+## 🚀 Usage Guide
 
-Для корректной работы проекта рекомендуется запускать скрипты из корня директории в следующем порядке:
+For accurate execution, run the scripts from the project root in the following sequence:
 
-### 1. Подготовка данных
+### 1. Data Preparation
 
-Генерирует очищенный файл `Data/CleanedData.csv`.
+Generates the processed `Data/CleanedData.csv` file.
 
 ```bash
 python3 analysis/1_1_load.py
@@ -42,16 +42,16 @@ python3 analysis/1_2_cleaned_data.py
 python3 analysis/1_3_eda.py
 ```
 
-### 2. Обучение моделей
+### 2. Model Training
 
-Создает основные графики сравнения и замеряет эффективность.
+Creates comparison plots and measures execution efficiency.
 
 ```bash
 python3 design/2_2_split.py
 python3 design/2_3_results.py
 ```
 
-### 3. Тестирование и валидация
+### 3. Testing & Validation
 
 ```bash
 python3 testing/3_0_cross_validation.py
@@ -61,14 +61,14 @@ python3 testing/3_2_optimization.py
 
 ---
 
-## 📊 Результаты
+## 📊 Visual Outputs
 
-Все графики сохраняются в папку `images/`:
+All plots are exported to the `images/` directory:
 
-- `Figure_2_1_Correlation.png` — Матрица корреляций.
-- `Figure_7_GlobalComparison.png` — Сравнение точности моделей.
-- `Figure_10_CrossValidation.png` — Результаты кросс-валидации.
-- `Figure_9_Optimization.png` — Оптимизация гиперпараметров.
+- `Figure_2_1_Correlation.png` — Feature correlation matrix.
+- `Figure_7_GlobalComparison.png` — Model accuracy comparison.
+- `Figure_10_CrossValidation.png` — Cross-validation stability results.
+- `Figure_9_Optimization.png` — Hyperparameter tuning results.
 
 ---
 
