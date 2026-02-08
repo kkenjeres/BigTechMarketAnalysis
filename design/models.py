@@ -1,5 +1,12 @@
 from sklearn.ensemble import RandomForestClassifier, GradientBoostingClassifier, AdaBoostClassifier, ExtraTreesClassifier, BaggingClassifier, VotingClassifier
 from sklearn.tree import DecisionTreeClassifier
+from sklearn.linear_model import LogisticRegression
+
+# Decision Tree 
+dt_model = DecisionTreeClassifier(max_depth=10, random_state=42)
+
+# Logistic Regression 
+lr_model = LogisticRegression(max_iter=1000, random_state=42)
 
 # Random Forest
 rf_model = RandomForestClassifier(n_estimators=100, max_depth=10, random_state=42)
@@ -29,6 +36,8 @@ vote_hard = VotingClassifier(estimators=estimators, voting='hard')
 vote_soft = VotingClassifier(estimators=estimators, voting='soft')
 
 all_models = {
+    "Decision Tree": dt_model,
+    "Logistic Regression": lr_model,
     "Random Forest": rf_model,
     "Gradient Boosting": gb_model,
     "AdaBoost": ada_model,
@@ -37,3 +46,5 @@ all_models = {
     "Voting (Hard)": vote_hard,
     "Voting (Soft)": vote_soft
 }
+
+
